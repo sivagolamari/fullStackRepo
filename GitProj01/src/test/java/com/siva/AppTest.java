@@ -1,6 +1,6 @@
 package com.siva;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,11 +9,24 @@ import org.junit.jupiter.api.Test;
  */
 public class AppTest {
 
-    /**
-     * Rigorous Test :-)
-     */
     @Test
-    public void shouldAnswerWithTrue() {
-        assertTrue(true);
+    public void testSumWithPositives() {
+        App app=new App();
+        int expected=500;
+        int actual=app.sum(200, 300);
+        assertEquals(actual,expected);
+    }
+    
+    public void testWithNegetives() {
+    	App app=new App();
+        int expected=-500;
+        int actual=app.sum(-200, -300);
+        assertEquals(actual,expected);
+    }
+    public void testWithHybrid() {
+    	App app=new App();
+        int expected=-100;
+        int actual=app.sum(200, -300);
+        assertEquals(actual,expected);
     }
 }
